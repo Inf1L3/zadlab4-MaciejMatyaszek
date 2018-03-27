@@ -4,8 +4,6 @@ package pl.edu.ur.polab4.Wprowadźdane;
 import java.util.Scanner;
  
 public class Main {
-
-    private static int sw;
  
  
     public static void main(String[] args) {
@@ -18,7 +16,7 @@ public class Main {
         int e;
  
         Scanner input = new Scanner(System.in);
- 
+        int sw;
         do {
  
             System.out.println("1  Wprowadz dane studenta pod wybrany indeks tablicy");
@@ -26,10 +24,11 @@ public class Main {
             System.out.println("3  Edytuj dane studenta z danego indeksu");
             System.out.println("4  Pokaż wszystkich studentow");
             System.out.println("5  Wyswietl dane wybranego studenta");
+            System.out.println("0  Zamknięcie programu");
  
  
-            int sw = input.nextInt();
- 
+            sw = input.nextInt();
+            input.nextLine();
  
             switch (sw) {
                 case 1:
@@ -68,6 +67,8 @@ public class Main {
                     int i4 = input.nextInt();
                     t[i4].pokazDane();
                     break;
+                case 0:
+                    System.out.println("Program zostanie zamknięty ");
                 default:
                     System.out.println("Błędny numer");
                     break;
